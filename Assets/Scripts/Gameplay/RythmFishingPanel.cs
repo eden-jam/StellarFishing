@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Diagnostics.Contracts;
 using UnityEngine;
 
 public sealed class RythmFishingPanel : IFishingPanel

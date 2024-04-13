@@ -44,6 +44,7 @@ public abstract class IFishingPanel : MonoBehaviour
 	{
 		_isActive = false;
 		StartCoroutine(DelayHide(true, _hideDelay));
+		FishSnapshotter.Instance.RenderFish(FishingManager.Instance.CurrentFish);
 	}
 
 	protected void Failed()

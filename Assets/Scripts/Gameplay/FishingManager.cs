@@ -15,11 +15,16 @@ public class FishingManager : Singleton<FishingManager>
 	private FishDescription _currentFish = null;
 	#endregion Fields
 
+	#region Properties
+	public FishDescription CurrentFish { get => _currentFish;}
+	#endregion Properties
+
 	#region Events
 	/// <summary>
 	/// Event triggered when 
 	/// </summary>
 	private Action<bool> _onFishEndedEvent = null;
+
 
 	/// <summary>
 	/// <inheritdoc cref="_onFishEndedEvent"/>
