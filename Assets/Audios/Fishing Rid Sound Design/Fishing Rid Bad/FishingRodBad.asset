@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: FishingRodBad
+  m_EditorClassIdentifier: Assembly-CSharp::MultiSoundDesign
+  audioClips:
+  - {fileID: 8300000, guid: f2b531a755d3e8e41af2ab40fdac2991, type: 3}
+  - {fileID: 8300000, guid: 1a903a65873043c4bb0126b5d5082647, type: 3}
+  - {fileID: 8300000, guid: 98eaca31cbb6f53488c7addcd1702073, type: 3}
+  - {fileID: 8300000, guid: 3b1abd1a853b3de448381fa2f8714651, type: 3}
