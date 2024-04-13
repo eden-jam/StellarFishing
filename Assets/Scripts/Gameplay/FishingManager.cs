@@ -11,7 +11,6 @@ public class FishingManager : Singleton<FishingManager>
 	[SerializeField] private WinPanel _winPanel = null;
 	[SerializeField] private LoosePanel _loosePanel = null;
 
-	private bool _isActive = false;
 	private bool _hasSucceed = false;
 	private FishDescription _currentFish = null;
 	#endregion Fields
