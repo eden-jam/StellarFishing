@@ -273,6 +273,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 7023713538086187688, guid: 1faa4da68e87d8741917265fe74ae082,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7302587246248997580, guid: 1faa4da68e87d8741917265fe74ae082,
         type: 3}
       propertyPath: m_Pivot.x
@@ -408,6 +413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LoosePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 452247689899526315, guid: b0bda4c4354750249bac8535366233d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2167792820228707703, guid: b0bda4c4354750249bac8535366233d3,
         type: 3}
@@ -563,7 +573,7 @@ PrefabInstance:
     - target: {fileID: 1594705518200832398, guid: 56f8a8df5412a4a44b3abe9459579ce4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.85
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1594705518200832398, guid: 56f8a8df5412a4a44b3abe9459579ce4,
         type: 3}
@@ -573,7 +583,7 @@ PrefabInstance:
     - target: {fileID: 1594705518200832398, guid: 56f8a8df5412a4a44b3abe9459579ce4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 1594705518200832398, guid: 56f8a8df5412a4a44b3abe9459579ce4,
         type: 3}
@@ -643,6 +653,11 @@ PrefabInstance:
     - target: {fileID: 1594705518200832398, guid: 56f8a8df5412a4a44b3abe9459579ce4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888467910539655130, guid: 56f8a8df5412a4a44b3abe9459579ce4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
