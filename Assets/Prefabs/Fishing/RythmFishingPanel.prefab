@@ -641,7 +641,7 @@ PrefabInstance:
     - target: {fileID: 2020167623867590359, guid: fc9b3402106782c438020cb391278815,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -701,6 +701,8 @@ MonoBehaviour:
   _root: {fileID: 4297000724717312968}
   _inputActionReference: {fileID: -3402327480356844279, guid: 88ab67eed2b73c6439d7ae0d999245e7,
     type: 3}
+  _hideDelay: 1
+  _maxTime: 30
 --- !u!224 &3191784293711261570 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1465637737680898714, guid: fc9b3402106782c438020cb391278815,

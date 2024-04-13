@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public abstract class IFishingPanel : MonoBehaviour
 {
 	[SerializeField] private GameObject _root = null;
-	[SerializeField] private InputActionReference _inputActionReference = null;
 
 	[SerializeField] private float _hideDelay = 1.0f;
 	[SerializeField] private float _maxTime = 30.0f;
@@ -45,13 +44,13 @@ public abstract class IFishingPanel : MonoBehaviour
 	protected void Succeed()
 	{
 		_isActive = false;
-		StartCoroutine(DelayHide(_isActive, _hideDelay));
+		StartCoroutine(DelayHide(true, _hideDelay));
 	}
 
 	protected void Failed()
 	{
 		_isActive = false;
-		StartCoroutine(DelayHide(_isActive, _hideDelay));
+		StartCoroutine(DelayHide(false, _hideDelay));
 	}
 
 	protected IEnumerator DelayHide(bool succeed, float delay)
@@ -77,7 +76,7 @@ public abstract class IFishingPanel : MonoBehaviour
 
 		UpdateGame();
 
-		if (_inputActionReference.action.WasPressedThisFrame())
+		if (InputManager.Instance.WasPressedThisFrame)
 		{
 			OnPressed();
 		}
