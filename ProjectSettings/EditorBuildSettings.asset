@@ -12,16 +12,16 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScene/MapScene.unity
     guid: 86606ac753f39ba4595fd38c1219f43e
   - enabled: 1
-    path: Assets/Scenes/GameScene/PurpleScene.unity
-    guid: 1a8b9a7a1ef0af94089a77b3c538c355
-  - enabled: 1
-    path: Assets/Scenes/GameScene/PinkScene.unity
-    guid: ca7196eb9d0938643b6cb0e8a70e186a
-  - enabled: 1
-    path: Assets/Scenes/GameScene/GreenScene.unity
-    guid: 3d266ceb83faadb40a1d4332b7a28c77
-  - enabled: 1
     path: Assets/Scenes/GameScene/EndScene.unity
     guid: 29d6a33d9e4f8dd4d93922639ef4cf42
+  - enabled: 1
+    path: Assets/Scenes/Environments/GreenScene.unity
+    guid: 30a2455b6ca73c844951d8c41b98f6c6
+  - enabled: 1
+    path: Assets/Scenes/Environments/PinkScene.unity
+    guid: f37f5cd32ec953949b0f12d5a065318d
+  - enabled: 1
+    path: Assets/Scenes/Environments/PurpleScene.unity
+    guid: 7b9bfd08defc3b249a7269e1e6b65048
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
