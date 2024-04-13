@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
+	private int _lastMapSelected = -1;
+
 	[SerializeField] private FishesCatalog _fishesCatalog = null;
 
 	public FishesCatalog FishesCatalog { get => _fishesCatalog; }
@@ -15,7 +17,9 @@ public class GameManager : Singleton<GameManager>
 	[SerializeField] private string _sceneGreen = null;
 	[SerializeField] private string _scenePink = null;
 
-	private void Start()
+    public int LastMapSelected { get => _lastMapSelected; }
+
+    private void Start()
 	{
 		DontDestroyOnLoad(this);
 	}
@@ -25,21 +29,21 @@ public class GameManager : Singleton<GameManager>
 		SceneManager.LoadScene(_sceneMap);
 	}
 
-	private void LoadScene(int environnementType)
+	private void LoadScene(EnvironmentType environnementType)
 	{
 		switch (environnementType)
 		{
-			case 0:
+			case EnvironmentType.Purlple:
 				{
 					SceneManager.LoadScene(_scenePurple);
 				}
 				break;
-			case 1:
+			case EnvironmentType.Green:
 				{
 					SceneManager.LoadScene(_sceneGreen);
 				}
 				break;
-			case 2:
+			case EnvironmentType.Pink:
 				{
 					SceneManager.LoadScene(_scenePink);
 				}
@@ -47,8 +51,9 @@ public class GameManager : Singleton<GameManager>
 		}
 	}
 
-	public void OnSceneSelected(int environnementType)
+	public void OnSceneSelected(EnvironmentType environnementType, int index)
 	{
+		_lastMapSelected = index;
 		LoadScene(environnementType);
 	}
 
