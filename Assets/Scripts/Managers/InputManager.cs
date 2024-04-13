@@ -9,4 +9,8 @@ public class InputManager : Singleton<InputManager>
 
 	public bool WasPressedThisFrame { get { return _input.action.WasPerformedThisFrame(); } }
 
+	private void Start()
+	{
+		DontDestroyOnLoad(this);
+	}
 }
