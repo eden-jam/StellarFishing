@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        public GameObject PausePanel;
-}
 
-// Update is called once per frame
-void Update()
-{
+	public GameObject PausePanel;
+	// Start is called before the first frame update
+	void Start()
+	{
+	}
 
-}
+	// Update is called once per frame
+	void Update()
+	{
 
-public void Pause()
-{
-    PausePanel.SetActive(true);
-    Time.timeScale = 0;
-}
+	}
 
+	public void Pause()
+	{
+		PausePanel.SetActive(true);
+		Time.timeScale = 0;
+	}
 }
 
