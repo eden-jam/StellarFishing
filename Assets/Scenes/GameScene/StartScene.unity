@@ -452,7 +452,6 @@ GameObject:
   - component: {fileID: 1139087473}
   - component: {fileID: 1139087476}
   - component: {fileID: 1139087475}
-  - component: {fileID: 1139087474}
   m_Layer: 5
   m_Name: StartText
   m_TagString: Untagged
@@ -467,40 +466,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139087472}
-  m_LocalRotation: {x: -0, y: -0, z: 0.113612734, w: 0.99352515}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 412883629}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.047}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 639, y: -348}
-  m_SizeDelta: {x: 489.044, y: 125.347}
+  m_AnchoredPosition: {x: 525, y: -68}
+  m_SizeDelta: {x: 494.49, y: 125.347}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1139087474
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139087472}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cedd8b0b48923e9409f67a801bf7de68, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1139087475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,7 +498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press any button to play
+  m_text: PRESS ANY BUTTON
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 90b834d2768b3064d8aef637db0d3183, type: 2}
   m_sharedMaterial: {fileID: -8119986686275636173, guid: 90b834d2768b3064d8aef637db0d3183,
