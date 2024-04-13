@@ -37,7 +37,7 @@ public class FishingManager : Singleton<FishingManager>
 		if (_isActive == false && _input.action.WasPerformedThisFrame())
 		{
 			_isActive = true;
-			LaunchSmashFishingPanel();
+			LaunchPrecisionFishing();
 		}
 	}
 

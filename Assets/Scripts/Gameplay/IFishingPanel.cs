@@ -9,6 +9,7 @@ public abstract class IFishingPanel : MonoBehaviour
 	[SerializeField] private InputActionReference _inputActionReference = null;
 
 	[SerializeField] private float _hideDelay = 1.0f;
+	[SerializeField] private float _maxTime = 30.0f;
 
 	private bool _isActive = false;
 
@@ -26,8 +27,11 @@ public abstract class IFishingPanel : MonoBehaviour
 		remove { _fishingEndedEvent -= value; }
 	}
 
+	private float _timer = 0.0f;
+
 	public void Show()
 	{
+		_timer = _maxTime;
 		_isActive = true;
 		_root.SetActive(_isActive);
 	}
@@ -61,6 +65,13 @@ public abstract class IFishingPanel : MonoBehaviour
 	{
 		if (_isActive == false)
 		{
+			return;
+		}
+
+		_timer -= Time.deltaTime;
+		if (_timer <= 0.0f)
+		{
+			Failed();
 			return;
 		}
 
