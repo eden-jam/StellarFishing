@@ -13,8 +13,10 @@ public sealed class PrecisionFishingPanel : IFishingPanel
 
 	private float _currentRotation = 0.0f;
 
-	public void OnEnable()
+	public override void Show()
 	{
+		base.Show();
+
 		_currentRotation = 0.0f;
         foreach (var area in _area)
         {

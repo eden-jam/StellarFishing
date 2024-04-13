@@ -25,7 +25,7 @@ public class IEndPanel : MonoBehaviour
 
 	public void Update()
 	{
-		if (InputManager.Instance.WasPressedThisFrame)
+		if (InputManager.Instance.WasPressedThisFrame())
 		{
 			Hide();
 		}

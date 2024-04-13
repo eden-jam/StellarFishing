@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static SceneStateManager;
 
 public class SceneStateManager : Singleton<SceneStateManager>
 {
@@ -24,10 +25,13 @@ public class SceneStateManager : Singleton<SceneStateManager>
 
 	private void Start()
 	{
-		_sceneStates.Add(SceneState.IntroState, new IntroSceneState());
-		_sceneStates.Add(SceneState.ReadyState, new ReadySceneState());
-		_sceneStates.Add(SceneState.GameState, new GameSceneState());
-		_sceneStates.Add(SceneState.OutroState, new OutroSceneState());
+		_sceneStates = new Dictionary<SceneState, ISceneState>
+		{
+			{ SceneState.IntroState, new IntroSceneState() },
+			{ SceneState.ReadyState, new ReadySceneState() },
+			{ SceneState.GameState, new GameSceneState() },
+			{ SceneState.OutroState, new OutroSceneState() }
+		};
 
 		FishingManager.Instance.OnFishEnded += OnFishingEnded;
 	}
@@ -37,6 +41,7 @@ public class SceneStateManager : Singleton<SceneStateManager>
 		if (succeed)
 		{
 			_fishCatched++;
+			RequestNextState();
 		}
 	}
 
@@ -81,4 +86,8 @@ public class SceneStateManager : Singleton<SceneStateManager>
 		_sceneStates[_currentSceneState].OnEnterState();
 	}
 
+	private void Update()
+	{
+		_sceneStates[_currentSceneState].Update();
+	}
 }

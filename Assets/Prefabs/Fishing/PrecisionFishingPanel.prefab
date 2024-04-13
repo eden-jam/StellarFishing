@@ -419,6 +419,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 270075527210680016, guid: fc9b3402106782c438020cb391278815,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1129040068182067332, guid: fc9b3402106782c438020cb391278815,
         type: 3}
       propertyPath: m_Pivot.x
@@ -527,7 +532,7 @@ PrefabInstance:
     - target: {fileID: 2020167623867590359, guid: fc9b3402106782c438020cb391278815,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -577,10 +582,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _root: {fileID: 1888467910539655130}
-  _inputActionReference: {fileID: -3402327480356844279, guid: 88ab67eed2b73c6439d7ae0d999245e7,
-    type: 3}
   _hideDelay: 1
-  _maxTime: 30
+  _maxTime: 5
   _speed: 250
   _cursor: {fileID: 8063012208291858169}
   _degreeRatio: 0.1

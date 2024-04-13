@@ -12,6 +12,7 @@ public class FishingManager : Singleton<FishingManager>
 	[SerializeField] private LoosePanel _loosePanel = null;
 
 	private bool _isActive = false;
+	private bool _hasSucceed = false;
 	private FishDescription _currentFish = null;
 	#endregion Fields
 
@@ -46,6 +47,7 @@ public class FishingManager : Singleton<FishingManager>
 
 	public void LaunchFishing()
 	{
+		_hasSucceed = false;
 		switch (_currentFish.FishingMiniGameType)
 		{
 			case FishingMiniGameType.Smash:
@@ -94,7 +96,7 @@ public class FishingManager : Singleton<FishingManager>
 
 	private void OnFishingEnded(bool succeed)
 	{
-		_onFishEndedEvent?.Invoke(succeed);
+		_hasSucceed = succeed;
 		HideGame();
 		if (succeed)
 		{
@@ -111,8 +113,9 @@ public class FishingManager : Singleton<FishingManager>
 
 	private void HideEnd()
 	{
-		_winPanel.PanelHiddedEvent += HideEnd;
-		_loosePanel.PanelHiddedEvent += HideEnd;
+		_winPanel.PanelHiddedEvent -= HideEnd;
+		_loosePanel.PanelHiddedEvent -= HideEnd;
+		_onFishEndedEvent?.Invoke(_hasSucceed);
 		HideGame();
 	}
 

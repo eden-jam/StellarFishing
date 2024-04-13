@@ -14,7 +14,7 @@ public abstract class ISceneState
 
 	public virtual void Update()
 	{
-		if (InputManager.Instance.WasPressedThisFrame)
+		if (InputManager.Instance.WasPressedThisFrame())
 		{
 			SceneStateManager.Instance.RequestNextState();
 		}

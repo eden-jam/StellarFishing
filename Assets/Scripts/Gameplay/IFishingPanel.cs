@@ -27,7 +27,7 @@ public abstract class IFishingPanel : MonoBehaviour
 
 	private float _timer = 0.0f;
 
-	public void Show()
+	public virtual void Show()
 	{
 		_timer = _maxTime;
 		_isActive = true;
@@ -75,7 +75,7 @@ public abstract class IFishingPanel : MonoBehaviour
 
 		UpdateGame();
 
-		if (InputManager.Instance.WasPressedThisFrame)
+		if (InputManager.Instance.WasPressedThisFrame())
 		{
 			OnPressed();
 		}
@@ -84,4 +84,9 @@ public abstract class IFishingPanel : MonoBehaviour
 	protected abstract void UpdateGame();
 
 	protected abstract void OnPressed();
+
+	public void Reset()
+	{
+		
+	}
 }

@@ -7,8 +7,10 @@ public sealed class SmashFishingPanel : IFishingPanel
     [SerializeField] private float _subRate = 0.1f;
 	[SerializeField] private Image _image = null;
 
-	public void OnEnable()
+	public override void Show()
 	{
+		base.Show();
+
 		_image.fillAmount = 0.2f;
 	}
 
