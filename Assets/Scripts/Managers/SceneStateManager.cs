@@ -37,8 +37,8 @@ public class SceneStateManager : Singleton<SceneStateManager>
 		if (succeed)
 		{
 			_fishCatched++;
-			RequestNextState();
 		}
+		RequestNextState();
 	}
 
 	public void RequestNextState()

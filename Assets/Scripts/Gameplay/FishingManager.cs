@@ -45,12 +45,12 @@ public class FishingManager : Singleton<FishingManager>
 
 	private void Start()
 	{
-		GatherFish();
 		HideGame();
 	}
 
 	public void LaunchFishing()
 	{
+		GatherFish();
 		_hasSucceed = false;
 		switch (_currentFish.FishingMiniGameType)
 		{
@@ -105,7 +105,6 @@ public class FishingManager : Singleton<FishingManager>
 		if (succeed)
 		{
 			_winPanel.gameObject.SetActive(true);
-			_winPanel.Display(null);
 			_winPanel.PanelHiddedEvent += HideEnd;
 		}
 		else
@@ -120,12 +119,10 @@ public class FishingManager : Singleton<FishingManager>
 		_winPanel.PanelHiddedEvent -= HideEnd;
 		_loosePanel.PanelHiddedEvent -= HideEnd;
 		_onFishEndedEvent?.Invoke(_hasSucceed);
-		HideGame();
 	}
 
 	private void HideGame()
 	{
-		GatherFish();
 		_precisionFishingPanel.Hide();
 		_smashFishingPanel.Hide();
 		_rythmFishingPanel.Hide();

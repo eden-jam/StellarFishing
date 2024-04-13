@@ -13,6 +13,7 @@ public class TimelineManager : Singleton<TimelineManager>
 		if (_introTimeline == null)
 		{
 			onDone?.Invoke(null);
+			return;
 		}
 		_introTimeline.played += onDone;
 		_introTimeline.Play();
@@ -23,6 +24,7 @@ public class TimelineManager : Singleton<TimelineManager>
 		if (_outroTimeline == null)
 		{
 			onDone?.Invoke(null);
+			return;
 		}
 		_outroTimeline.played += onDone;
 		_outroTimeline.Play();
@@ -33,6 +35,7 @@ public class TimelineManager : Singleton<TimelineManager>
 		if (_gameTimeline == null)
 		{
 			onDone?.Invoke(null);
+			return;
 		}
 		_gameTimeline.played += onDone;
 		_gameTimeline.Play();
