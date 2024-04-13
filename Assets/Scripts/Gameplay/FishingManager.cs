@@ -1,7 +1,8 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class FishingManager : MonoBehaviour
+public class FishingManager : Singleton<FishingManager>
 {
 	[SerializeField] private PrecisionFishingPanel _precisionFishingPanel = null;
 	[SerializeField] private SmashFishingPanel _smashFishingPanel = null;
