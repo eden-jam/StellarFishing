@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class RythmFishingPanel : IFishingPanel
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	void Start()
+	{
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	}
+
+	protected override void UpdateGame()
+	{
+	}
+
+	protected override void OnPressed()
+	{
+	}
 }
