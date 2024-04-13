@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class PrecisionFishingPanel : IFishingPanel
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	void Start()
+	{
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	}
+
+	protected override void UpdateGame()
+	{
+
+	}
+
+	protected override void OnPressed()
+	{
+	}
 }

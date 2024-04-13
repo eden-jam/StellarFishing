@@ -77,11 +77,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -117,9 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6334f786a552ef47859fac4dc7ec9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _precisionFishingPanel: {fileID: 0}
-  _smashFishingPanel: {fileID: 0}
-  _rythmFishingPanel: {fileID: 0}
+  _input: {fileID: -3402327480356844279, guid: 88ab67eed2b73c6439d7ae0d999245e7, type: 3}
+  _precisionFishingPanel: {fileID: 4015196563450391126}
+  _smashFishingPanel: {fileID: 2462239996151321668}
+  _rythmFishingPanel: {fileID: 9126370861591318656}
 --- !u!1001 &3859434229324679546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,11 +133,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RythmFishingPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2599862204411626447, guid: 43d02547c65f984459ea7de95e622fe8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4014577346552589724, guid: 43d02547c65f984459ea7de95e622fe8,
         type: 3}
@@ -249,6 +245,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3859434229324679546}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9126370861591318656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5415603884389423610, guid: 43d02547c65f984459ea7de95e622fe8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3859434229324679546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ea121259a003a4ba18fc7f8d34ec05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8422850261248766546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -367,6 +375,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f8a8df5412a4a44b3abe9459579ce4, type: 3}
+--- !u!114 &4015196563450391126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4853510063116883972, guid: 56f8a8df5412a4a44b3abe9459579ce4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8422850261248766546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bcccd79064cf746a2b917c4041c87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7116375256830227420 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1594705518200832398, guid: 56f8a8df5412a4a44b3abe9459579ce4,
@@ -385,11 +405,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SmashFishingPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7261009802210122262, guid: f052a47735c710d418f14cbcc20ac052,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8603702419931444293, guid: f052a47735c710d418f14cbcc20ac052,
         type: 3}
@@ -502,3 +517,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8516823774787195404}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2462239996151321668 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6060283940048012872, guid: f052a47735c710d418f14cbcc20ac052,
+    type: 3}
+  m_PrefabInstance: {fileID: 8516823774787195404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc8243bd78345a49b7b875a001e08d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

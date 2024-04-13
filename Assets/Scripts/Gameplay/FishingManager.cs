@@ -1,12 +1,17 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FishingManager : Singleton<FishingManager>
 {
+	[SerializeField] private InputActionReference _input = null;
+
 	[SerializeField] private PrecisionFishingPanel _precisionFishingPanel = null;
 	[SerializeField] private SmashFishingPanel _smashFishingPanel = null;
 	[SerializeField] private RythmFishingPanel _rythmFishingPanel = null;
+
+	private bool _isActive = false;
 
 	/// <summary>
 	/// Event triggered when 
@@ -25,6 +30,15 @@ public class FishingManager : Singleton<FishingManager>
 	public void Start()
 	{
 		HideAll();
+	}
+
+	public void Update()
+	{
+		if (_isActive == false && _input.action.WasPerformedThisFrame())
+		{
+			_isActive = true;
+			LaunchSmashFishingPanel();
+		}
 	}
 
 	public void LaunchPrecisionFishing()
@@ -47,7 +61,8 @@ public class FishingManager : Singleton<FishingManager>
 
 	private void OnFishingEnded(bool succeed)
 	{
-		_onFishEndedEvent.Invoke(succeed);
+		_onFishEndedEvent?.Invoke(succeed);
+		HideAll();
 	}
 
 	private void HideAll()

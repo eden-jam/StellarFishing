@@ -1,15 +1,21 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class IFishingPanel : MonoBehaviour
+public abstract class IFishingPanel : MonoBehaviour
 {
-    [SerializeField] private GameObject _root = null;
+	[SerializeField] private GameObject _root = null;
+	[SerializeField] private InputActionReference _inputActionReference = null;
 
+	[SerializeField] private float _hideDelay = 1.0f;
+
+	private bool _isActive = false;
 
 	/// <summary>
 	/// Event triggered when fishing ended.
 	/// </summary>
-	protected Action<bool> _fishingEndedEvent = null;
+	private Action<bool> _fishingEndedEvent = null;
 
 	/// <summary>
 	/// <inheritdoc cref="_fishingEndedEvent"/>
@@ -22,16 +28,51 @@ public class IFishingPanel : MonoBehaviour
 
 	public void Show()
 	{
-		_root.SetActive(true);
+		_isActive = true;
+		_root.SetActive(_isActive);
 	}
 
 	public void Hide()
 	{
-		_root.SetActive(true);
+		_isActive = false;
+		_root.SetActive(false);
 	}
 
-	public bool IsActive()
-    {
-		return _root.activeSelf;
+	protected void Succeed()
+	{
+		_isActive = false;
+		StartCoroutine(DelayHide(_isActive, _hideDelay));
 	}
+
+	protected void Failed()
+	{
+		_isActive = false;
+		StartCoroutine(DelayHide(_isActive, _hideDelay));
+	}
+
+	protected IEnumerator DelayHide(bool succeed, float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		Hide();
+		_fishingEndedEvent?.Invoke(succeed);
+	}
+
+	public void Update()
+	{
+		if (_isActive == false)
+		{
+			return;
+		}
+
+		UpdateGame();
+
+		if (_inputActionReference.action.WasPressedThisFrame())
+		{
+			OnPressed();
+		}
+	}
+
+	protected abstract void UpdateGame();
+
+	protected abstract void OnPressed();
 }
