@@ -1,10 +1,10 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class FishingManager : Singleton<FishingManager>
 {
+	#region Fields
 	[SerializeField] private PrecisionFishingPanel _precisionFishingPanel = null;
 	[SerializeField] private SmashFishingPanel _smashFishingPanel = null;
 	[SerializeField] private RythmFishingPanel _rythmFishingPanel = null;
@@ -12,7 +12,10 @@ public class FishingManager : Singleton<FishingManager>
 	[SerializeField] private LoosePanel _loosePanel = null;
 
 	private bool _isActive = false;
+	private FishDescription _currentFish = null;
+	#endregion Fields
 
+	#region Events
 	/// <summary>
 	/// Event triggered when 
 	/// </summary>
@@ -26,34 +29,64 @@ public class FishingManager : Singleton<FishingManager>
 		add { _onFishEndedEvent -= value; _onFishEndedEvent += value; }
 		remove { _onFishEndedEvent -= value; }
 	}
+	#endregion Events
 
-	public void Start()
+	#region Methods
+	private void OnDestroy()
 	{
+		_currentFish = null;
+		_onFishEndedEvent = null;
+	}
+
+	private void Start()
+	{
+		GatherFish();
 		HideGame();
 	}
 
-	public void Update()
+	public void LaunchFishing()
 	{
-		if (_isActive == false && InputManager.Instance.WasPressedThisFrame)
+		switch (_currentFish.FishingMiniGameType)
 		{
-			_isActive = true;
-			LaunchPrecisionFishing();
+			case FishingMiniGameType.Smash:
+				{
+					LaunchSmashFishingPanel();
+				break;
+				}
+
+			case FishingMiniGameType.Precision:
+				{
+					LaunchPrecisionFishingPanel();
+				break;
+				}
+
+			case FishingMiniGameType.Rythm:
+				{
+					LaunchRythmFishingPanel();
+				break;
+				}
+
+			default:
+			case FishingMiniGameType.None:
+				{
+					throw new NotImplementedException();
+				}
 		}
 	}
 
-	public void LaunchPrecisionFishing()
+	private void LaunchPrecisionFishingPanel()
 	{
 		_precisionFishingPanel.Show();
 		_precisionFishingPanel.FishingEndedEvent += OnFishingEnded;
 	}
 
-	public void LaunchSmashFishingPanel()
+	private void LaunchSmashFishingPanel()
 	{
 		_smashFishingPanel.Show();
 		_smashFishingPanel.FishingEndedEvent += OnFishingEnded;
 	}
 
-	public void LaunchRythmFishingPanel()
+	private void LaunchRythmFishingPanel()
 	{
 		_rythmFishingPanel.Show();
 		_rythmFishingPanel.FishingEndedEvent += OnFishingEnded;
@@ -85,8 +118,15 @@ public class FishingManager : Singleton<FishingManager>
 
 	private void HideGame()
 	{
+		GatherFish();
 		_precisionFishingPanel.Hide();
 		_smashFishingPanel.Hide();
 		_rythmFishingPanel.Hide();
 	}
+
+	private void GatherFish()
+	{
+		_currentFish = GameManager.Instance.FishesCatalog.GetRandomFish(EnvironmentManager.Instance.CurrentEnvironmentType);
+	}
+	#endregion Methods
 }
