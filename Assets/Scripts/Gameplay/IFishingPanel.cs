@@ -34,7 +34,7 @@ public abstract class IFishingPanel : MonoBehaviour
 		_root.SetActive(_isActive);
 	}
 
-	public void Hide()
+	public virtual void Hide()
 	{
 		_isActive = false;
 		_root.SetActive(false);

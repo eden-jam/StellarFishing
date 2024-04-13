@@ -19,8 +19,9 @@ public sealed class RythmFishingPanel : IFishingPanel
 	#endregion Fields
 
 	#region Methods
-	private void OnDestroy()
+	public override void Hide()
 	{
+		base.Hide();
 		_rythmCursor.MarkerOverlaped -= OnMarkerOverlaped;
 		_rythmCursor.MarkerUnoverlaped -= OnMarkerUnoverlaped;
 
@@ -31,13 +32,15 @@ public sealed class RythmFishingPanel : IFishingPanel
 		}
 	}
 
-	private void Start()
+	public override void Show()
 	{
+		base.Show();
 		_currentDuration = 0.0f;
 		_rythmCursor.MarkerOverlaped += OnMarkerOverlaped;
 		_rythmCursor.MarkerUnoverlaped += OnMarkerUnoverlaped;
 
 		_markerCount = GetComponentsInChildren<RythmMarker>(true).Length;
+		_markerSucceded = 0.0f;
 	}
 
 	protected override void UpdateGame()

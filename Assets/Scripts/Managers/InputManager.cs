@@ -9,8 +9,6 @@ public class InputManager : Singleton<InputManager>
 
 	private void Start()
 	{
-		//Cursor.lockState = CursorLockMode.Locked;
-		//Cursor.visible = false;
 		DontDestroyOnLoad(this);
 	}
 
@@ -27,5 +25,11 @@ public class InputManager : Singleton<InputManager>
 			return _input.action.WasPerformedThisFrame();
 		}
 		return false;
+	}
+
+	public void SetCursorState(bool locked)
+	{
+		Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
+		Cursor.visible = locked == false;
 	}
 }

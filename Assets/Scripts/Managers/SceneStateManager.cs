@@ -21,6 +21,7 @@ public class SceneStateManager : Singleton<SceneStateManager>
 
 	private void Start()
 	{
+		InputManager.Instance.SetCursorState(true);
 		_sceneStates = new Dictionary<SceneState, ISceneState>
 		{
 			{ SceneState.IntroState, new IntroSceneState() },
@@ -30,6 +31,11 @@ public class SceneStateManager : Singleton<SceneStateManager>
 		};
 
 		FishingManager.Instance.OnFishEnded += OnFishingEnded;
+	}
+
+	private void OnDestroy()
+	{
+		InputManager.Instance.SetCursorState(false);
 	}
 
 	public void OnFishingEnded(bool succeed)

@@ -15,6 +15,15 @@ public sealed class RythmMarker : MonoBehaviour
 	#endregion Propertis
 
 	#region Methods
+	private void OnEnable()
+	{
+		_isSucceed = false;
+		_neutralTick.SetActive(true);
+
+		_succeedTick.SetActive(false);
+		_failedTick.SetActive(false);
+	}
+
 	public void SetState(bool succeed)
 	{
 		_isSucceed = succeed;
