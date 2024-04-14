@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5922366400419168339
+--- !u!114 &-5857955403483437284
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PinkWater
-  m_Shader: {fileID: -6465566751694194690, guid: 59938b845cae28542b19d1397ddf4228,
+  m_Name: GhostMat
+  m_Shader: {fileID: -6465566751694194690, guid: 1aa3fa9a6b0804e4eb073d7d695343d7,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,14 +38,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainNormal:
-        m_Texture: {fileID: 2800000, guid: a0f5103761f2a8b4084f5e43521ad8f7, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryNormal:
-        m_Texture: {fileID: 2800000, guid: c3241de68ec644044aaa199c21236b9a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -60,28 +52,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.5
-    - _Depth: 3.18
-    - _Displacement: 14.09
-    - _DisplacementSpeed: 157.98
-    - _DisplacementStrength: 0.0001
-    - _GradiantCellDensity: 10
-    - _GradiantTime: 2
-    - _MainNormalSpeed: 0.05
-    - _NormalStrength: 1
+    - _FresnelPower: 2.43
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SecondaryNormalSpeed: -0.032
-    - _Smoothness: 0.679
-    - _Strength: 0.167
-    - _VoronoiIntensity: 3.5
     m_Colors:
-    - _Color1: {r: 0.5, g: 0.03066039, b: 0.087896876, a: 1}
-    - _Color2: {r: 0, g: 0, b: 0, a: 1}
-    - _DeepWaterColor: {r: 1, g: 0.43529415, b: 0.8039872, a: 0.5019608}
-    - _FogDistance: {r: 10, g: 150, b: 0, a: 0}
-    - _MainNormalTiling: {r: 250, g: 100, b: 0, a: 0}
-    - _SecondaryNormalTiling: {r: 100, g: 100, b: 0, a: 0}
-    - _ShallowWaterColor: {r: 1, g: 0.44505256, b: 0.43529415, a: 0.772549}
+    - _GhostColor: {r: 0, g: 0.8122524, b: 0.808344, a: 1}
+    - _GhostColor2: {r: 0.041273586, g: 0.041273586, b: 0.041273586, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
