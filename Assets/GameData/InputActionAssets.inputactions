@@ -19,7 +19,18 @@
                 {
                     "name": "",
                     "id": "c3f2a19b-78c4-4156-8dc9-f1dd4df36c8f",
-                    "path": "<Keyboard>/anyKey",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a3cd5945-6b16-49f6-9223-108f2ace93e1",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
