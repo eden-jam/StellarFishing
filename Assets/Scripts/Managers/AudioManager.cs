@@ -24,6 +24,10 @@ public class AudioManager : Singleton<AudioManager>
 
 	public void PlaySound(AudioClip clip)
 	{
+		if (_soundPool == null)
+		{
+			return;
+		}
 		PropSoundAudioSource source = _soundPool.Get();
 		source.Play(clip);
 	}
@@ -46,11 +50,19 @@ public class AudioManager : Singleton<AudioManager>
 
 	public void MuteMusic()
 	{
+		if (_music == null)
+		{
+			return;
+		}
 		_music.volume = 0.0f;
 	}
 
 	public void UnmuteMusic()
 	{
+		if (_music == null)
+		{
+			return;
+		}
 		_music.volume = 1.0f;
 	}
 	#region Internals
@@ -61,7 +73,7 @@ public class AudioManager : Singleton<AudioManager>
 
 	internal void ReturnToPool(PropSoundAudioSource propSoundAudioSource)
 	{
-		_soundPool.Release(propSoundAudioSource);
+		_soundPool?.Release(propSoundAudioSource);
 	}
 	#endregion Internals
 	#endregion Methods
