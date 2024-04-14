@@ -321,11 +321,16 @@ MonoBehaviour:
   _root: {fileID: 8895412402035180049}
   _hideDelay: 1
   _maxTime: 5
+  _fisherManWinSound: {fileID: 8300000, guid: 8a5b5dfabe32120458f6a079c5fdf1a4, type: 3}
+  _fisherManLoseSound: {fileID: 8300000, guid: db2a1a61eabc20346b80d9ff0cbd37f4, type: 3}
+  _dogWinSound: {fileID: 8300000, guid: 76670bc5402ab3349a4f5900b82ced84, type: 3}
+  _dogLoseSound: {fileID: 8300000, guid: 4d859e3a0a6175a41ad72416df137884, type: 3}
   _addAmount: 0.1
   _subRate: 0.25
   _minHeight: 80
   _maxHeight: 250
   _image: {fileID: 2046878211929575063}
+  _fishingRodGood: {fileID: 11400000, guid: 37a2bf8f60c6ba1418d17a750f1c18e2, type: 2}
 --- !u!224 &7826033427389544027 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1465637737680898714, guid: fc9b3402106782c438020cb391278815,

@@ -11,6 +11,10 @@ public sealed class RythmFishingPanel : IFishingPanel
 	[SerializeField] private RythmCursor _rythmCursor = null;
 	[SerializeField] private float _minScore = 0.75f;
 
+	[Header("Audio")]
+	[SerializeField] private MultiAudioClip _fishingRodBad = null;
+	[SerializeField] private MultiAudioClip _fishingRodGood = null;
+
 	private float _currentDuration = 0.0f;
 	private Coroutine _currentCoroutine = null;
 	private RythmMarker _currentMarker = null;
@@ -71,7 +75,13 @@ public sealed class RythmFishingPanel : IFishingPanel
 			_markerSucceded++;
 			_currentMarker.SetState(true);
 			_rythmCursor.SetState(RythmCursor.State.Succeed);
-			_currentMarker = null;
+			AudioManager.Instance.PlaySoundFishingRodSound(_fishingRodGood.GetRandomClip());
+
+			_currentMarker = null;							 
+		}
+		else
+		{
+			AudioManager.Instance.PlaySoundFishingRodSound(_fishingRodBad.GetRandomClip());
 		}
 
 		if (_currentCoroutine != null)

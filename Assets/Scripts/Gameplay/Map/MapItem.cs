@@ -46,8 +46,10 @@ public class MapItem : MonoBehaviour
 
 	public void OnPressed()
     {
+		AudioManager.Instance.PlayTransitionSound();
+		AudioManager.Instance.PlayClicSound();
 		MapManager.Instance.Validate(_environmentType, _index);
-    }
+	}
 
 	public void Activate()
 	{

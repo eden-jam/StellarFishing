@@ -9,6 +9,10 @@ public sealed class PrecisionFishingPanel : IFishingPanel
 
 	[SerializeField] private GameObject[] _area;
 
+	[Header("Audio")]
+	[SerializeField] private MultiAudioClip _fishingRodBad = null;
+	[SerializeField] private MultiAudioClip _fishingRodGood = null;
+
 	private bool _clockwise = true;
 
 	private float _currentRotation = 0.0f;
@@ -42,7 +46,12 @@ public sealed class PrecisionFishingPanel : IFishingPanel
 		int zone = GetZone(_currentRotation);
 		if (zone >= 0)
 		{
+			AudioManager.Instance.PlaySoundFishingRodSound(_fishingRodGood.GetRandomClip());
 			_area[zone].SetActive(false);
+		}
+		else
+		{
+			AudioManager.Instance.PlaySoundFishingRodSound(_fishingRodBad.GetRandomClip());
 		}
 
 		if (AreZoneDone())

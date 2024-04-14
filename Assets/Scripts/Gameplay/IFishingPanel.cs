@@ -9,6 +9,12 @@ public abstract class IFishingPanel : MonoBehaviour
 	[SerializeField] private float _hideDelay = 1.0f;
 	[SerializeField] private float _maxTime = 30.0f;
 
+	[SerializeField] private AudioClip _fisherManWinSound = null;
+	[SerializeField] private AudioClip _fisherManLoseSound = null;
+
+	[SerializeField] private AudioClip _dogWinSound = null;
+	[SerializeField] private AudioClip _dogLoseSound = null;
+
 	private bool _isActive = false;
 
 	/// <summary>
@@ -58,6 +64,17 @@ public abstract class IFishingPanel : MonoBehaviour
 		yield return new WaitForSeconds(delay);
 		Hide();
 		_fishingEndedEvent?.Invoke(succeed);
+
+		if (succeed)
+		{
+			AudioManager.Instance.PlaySound(_fisherManWinSound);
+			AudioManager.Instance.PlaySound(_dogWinSound);
+		}
+		else
+		{
+			AudioManager.Instance.PlaySound(_fisherManLoseSound);
+			AudioManager.Instance.PlaySound(_dogLoseSound);
+		}
 	}
 
 	public void Update()
@@ -88,6 +105,6 @@ public abstract class IFishingPanel : MonoBehaviour
 
 	public void Reset()
 	{
-		
+
 	}
 }

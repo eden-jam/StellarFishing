@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: c6b3b5572d1fa8842b66d50118e84537, type: 3}
   m_Name: FishingRodBad
-  m_EditorClassIdentifier: Assembly-CSharp::MultiSoundDesign
+  m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: f2b531a755d3e8e41af2ab40fdac2991, type: 3}
   - {fileID: 8300000, guid: 1a903a65873043c4bb0126b5d5082647, type: 3}

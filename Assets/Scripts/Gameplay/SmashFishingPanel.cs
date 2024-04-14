@@ -8,6 +8,9 @@ public sealed class SmashFishingPanel : IFishingPanel
     [SerializeField] private float _minHeight = 0.1f;
     [SerializeField] private float _maxHeight = 0.1f;
 	[SerializeField] private Image _image = null;
+	
+	[Header("Audio")]
+	[SerializeField] private MultiAudioClip _fishingRodGood = null;
 
 	private float _fillAmount = 1.0f;
 
@@ -26,6 +29,8 @@ public sealed class SmashFishingPanel : IFishingPanel
 
     protected override void OnPressed()
 	{
+		AudioManager.Instance.PlaySoundFishingRodSound(_fishingRodGood.GetRandomClip());
+
 		_fillAmount += _addAmount;
 		if (_fillAmount >= 1.0f)
 		{

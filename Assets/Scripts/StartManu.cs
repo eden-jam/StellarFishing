@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StartManu : MonoBehaviour
 {
-    void Update()
-    {
-        if (InputManager.Instance.WasPressedThisFrame())
-        {
-            GameManager.Instance.OnSceneEnd();
-        }
-    }
+	void Update()
+	{
+		if (InputManager.Instance.WasPressedThisFrame())
+		{
+			AudioManager.Instance.PlayTransitionSound();
+			AudioManager.Instance.PlayClicSound();
+			GameManager.Instance.OnSceneEnd();
+		}
+	}
 }
