@@ -50,11 +50,6 @@ public class SceneStateManager : Singleton<SceneStateManager>
 	{
 		switch (_currentSceneState)
 		{
-			case SceneState.IntroState:
-				{
-					RequestState(SceneState.ReadyState);
-				}
-				break;
 			case SceneState.ReadyState:
 				{
 					RequestState(SceneState.GameState);

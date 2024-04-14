@@ -47,7 +47,9 @@ MonoBehaviour:
   _fishesCatalog: {fileID: 11400000, guid: e6fd2b06ebf0bf74092112eabbca4b00, type: 2}
   _sceneStart: StartScene
   _sceneMap: MapScene
+  _sceneNarration: NarrationScene
   _sceneEnd: EndScene
   _scenePurple: PurpleScene
   _sceneGreen: GreenScene
   _scenePink: PinkScene
+  _lastMapIndex: 8

@@ -4,22 +4,26 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
 	private int _lastMapSelected = -1;
+	private EnvironmentType _lastEnvironmentType = EnvironmentType.None;
 
 	[SerializeField] private FishesCatalog _fishesCatalog = null;
-
-	public FishesCatalog FishesCatalog { get => _fishesCatalog; }
+	[SerializeField] private NarrationCatalog _narrationCatalog = null;
 
 	[SerializeField] private string _sceneStart = null;
 	[SerializeField] private string _sceneMap = null;
+	[SerializeField] private string _sceneNarration = null;
 	[SerializeField] private string _sceneEnd = null;
 
 	[SerializeField] private string _scenePurple = null;
 	[SerializeField] private string _sceneGreen = null;
 	[SerializeField] private string _scenePink = null;
 
+	[SerializeField] private int _lastMapIndex = 8;
+
     public int LastMapSelected { get => _lastMapSelected; }
 
-	[SerializeField] private int LastMapIndex = 8;
+	public FishesCatalog FishesCatalog { get => _fishesCatalog; }
+	public NarrationCatalog NarrationCatalog { get => _narrationCatalog; }
 
 	private void Start()
 	{
@@ -29,6 +33,11 @@ public class GameManager : Singleton<GameManager>
 	private void LoadMap()
 	{
 		SceneManager.LoadScene(_sceneMap);
+	}
+
+	private void LoadNarration()
+	{
+		SceneManager.LoadScene(_sceneNarration);
 	}
 
 	private void LoadScene(EnvironmentType environnementType)
@@ -56,12 +65,25 @@ public class GameManager : Singleton<GameManager>
 	public void OnSceneSelected(EnvironmentType environnementType, int index)
 	{
 		_lastMapSelected = index;
-		LoadScene(environnementType);
+		_lastEnvironmentType = environnementType;
+		LoadScene(_lastEnvironmentType);
 	}
 
 	public void OnSceneEnd()
 	{
-		if (_lastMapSelected < LastMapIndex) // TODO
+		if (_narrationCatalog.FindNarration(LastMapSelected) != null)
+		{
+			LoadNarration();
+		}
+		else
+		{
+			OnNarrationEnded();
+		}
+	}
+
+	public void OnNarrationEnded()
+	{
+		if (_lastMapSelected < _lastMapIndex) // TODO
 		{
 			LoadMap();
 		}

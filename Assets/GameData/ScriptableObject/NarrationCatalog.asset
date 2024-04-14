@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6050cfe10d85c24da75ce19bf59e0fd, type: 3}
+  m_Name: NarrationCatalog
+  m_EditorClassIdentifier: 
+  _startVideoClip: {fileID: 32900000, guid: 22cff502dda03f549b48cd236bf347e0, type: 3}
+  _endVideoClip: {fileID: 32900000, guid: 22cff502dda03f549b48cd236bf347e0, type: 3}
+  _narration:
+  - AfterIndexes: 0300000004000000
+    AudioClip: {fileID: 8300000, guid: bc4c9f602b7ab4a48865fb5b79fb34ab, type: 3}
+    SubtitlesSpeed: 30
+    Subtitles:
+    - 'You see my friend... Every star in the sky reminds me of the moments we shared
+      by the water.I love you beyond stars! '
+  - AfterIndexes: ffffffff
+    AudioClip: {fileID: 0}
+    SubtitlesSpeed: 14
+    Subtitles:
+    - In the vast reaches of space, there was an old fisherman who had lost his only
+      companion. His partner on countless fishing trips, his loyal dog.
+    - Since then, the fisherman kept fishing alone, with only memories of his dog
+      for company. As he sailed through different galaxies, his heartache never left
+      him.
+    - 'But one day, in his solitude, His life will change. '
+  - AfterIndexes: 08000000
+    AudioClip: {fileID: 0}
+    SubtitlesSpeed: 10
+    Subtitles:
+    - Yearning for companionship, the fisherman unknowingly beckoned a powerful god.
+      Touched by the fisherman's silent plea, the god granted an extraordinary wish.
+      Restoring life to the fisherman's beloved dog.
+    - The fisherman whispered his heartfelt gratitude to the universe, a testament
+      to the enduring bond between a man and his friend, and the profound magic that
+      dwells within the cosmos.
