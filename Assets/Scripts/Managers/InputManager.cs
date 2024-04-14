@@ -7,6 +7,8 @@ public class InputManager : Singleton<InputManager>
 
 	public bool _readThisFrame = false;
 
+	public InputActionReference Input { get => _input; }
+
 	private void Start()
 	{
 		DontDestroyOnLoad(this);

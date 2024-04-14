@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour 
+public class PauseMenu : MonoBehaviour
 {
-
 	public GameObject PausePanel;
 
 	public static bool GameIsPaused = false;
@@ -23,27 +19,30 @@ public class PauseMenu : MonoBehaviour
 				Pause();
 			}
 		}
-
-
 	}
 
 	public void Pause()
 	{
 		PausePanel.SetActive(true);
-		Time.timeScale = 0f;
+		InputManager.Instance.SetCursorState(false);
+		InputManager.Instance.Input.action.Disable();
 		GameIsPaused = true;
 	}
 	public void Resume()
 	{
 		PausePanel.SetActive(false);
-		Time.timeScale = 1f;
+		InputManager.Instance.SetCursorState(true);
+		InputManager.Instance.Input.action.Enable();
 		GameIsPaused = false;
 	}
 
 	public void Restart()
 	{
+		InputManager.Instance.SetCursorState(true);
+		InputManager.Instance.Input.action.Enable();
+		GameIsPaused = false;
+
 		GameManager.Instance.Restart();
-        Debug.Log("Restarting game");
-    }
+	}
 }
 

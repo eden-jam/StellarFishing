@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SliderControler : MonoBehaviour
 {
-    public TextMeshProUGUI valueText;
-    public void OnSliderChanged(float value)
-    {
-        valueText.text = value.ToString();
-    }
+	[SerializeField] private string _chanel = string.Empty;
+	[SerializeField] private VolumeSettings _volumeSettings = null;
+	[SerializeField] private TextMeshProUGUI valueText = null;
+
+	public void OnSliderChanged(float value)
+	{
+		valueText.text = value.ToString();
+
+		_volumeSettings.SetVolume(_chanel, value);
+	}
 }

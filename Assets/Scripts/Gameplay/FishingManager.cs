@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FishingManager : Singleton<FishingManager>
@@ -59,19 +58,22 @@ public class FishingManager : Singleton<FishingManager>
 			case FishingMiniGameType.Smash:
 				{
 					LaunchSmashFishingPanel();
-				break;
+					
+					break;
 				}
 
 			case FishingMiniGameType.Precision:
 				{
 					LaunchPrecisionFishingPanel();
-				break;
+					
+					break;
 				}
 
 			case FishingMiniGameType.Rythm:
 				{
 					LaunchRythmFishingPanel();
-				break;
+					
+					break;
 				}
 
 			default:
@@ -102,6 +104,7 @@ public class FishingManager : Singleton<FishingManager>
 
 	private void OnFishingEnded(bool succeed)
 	{
+		GatherFish();
 		_hasSucceed = succeed;
 		HideGame();
 		if (succeed)

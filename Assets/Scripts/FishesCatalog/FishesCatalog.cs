@@ -24,7 +24,7 @@ public class FishesCatalog : ScriptableObject
 			}
 		}
 
-		return fishDescriptionsInEnvironment[Random.Range(0, fishDescriptionsInEnvironment.Count - 1)];
+		return fishDescriptionsInEnvironment[Random.Range(0, fishDescriptionsInEnvironment.Count)];
 	}
 	#endregion Methods
 }

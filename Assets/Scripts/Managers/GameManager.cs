@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,10 +21,13 @@ public class GameManager : Singleton<GameManager>
 
 	[SerializeField] private int _lastMapIndex = 8;
 
-    public int LastMapSelected { get => _lastMapSelected; }
+	[SerializeField] private List<FishDescription> _fishesFished = new List<FishDescription>();
+
+	public int LastMapSelected { get => _lastMapSelected; }
 
 	public FishesCatalog FishesCatalog { get => _fishesCatalog; }
 	public NarrationCatalog NarrationCatalog { get => _narrationCatalog; }
+	public List<FishDescription> FishesFished { get => _fishesFished; }
 
 	private void Start()
 	{
@@ -71,11 +75,11 @@ public class GameManager : Singleton<GameManager>
 
 	public void OnSceneEnd()
 	{
-		if (_narrationCatalog.FindNarration(LastMapSelected) != null)
-		{
-			LoadNarration();
-		}
-		else
+		//if (_narrationCatalog.FindNarration(LastMapSelected) != null)
+		//{
+		//	LoadNarration();
+		//}
+		//else
 		{
 			OnNarrationEnded();
 		}

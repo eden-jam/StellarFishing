@@ -59,7 +59,7 @@ public class AudioManager : Singleton<AudioManager>
 		return PropSoundAudioSource.Instantiate(_soundSourcePrefab, transform);
 	}
 
-	internal void ReturnToPool(PropSoundAudioSource propSoundAudioSource)
+	public void ReturnToPool(PropSoundAudioSource propSoundAudioSource)
 	{
 		_soundPool.Release(propSoundAudioSource);
 	}
