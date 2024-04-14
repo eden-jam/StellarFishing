@@ -7,7 +7,8 @@ public class NarrationManager : MonoBehaviour
 	[SerializeField] private int _startSceneIndex = -1;
 	[SerializeField] private int _endSceneIndex = 8;
 
-	[SerializeField] private VideoPlayer _videoPlayer = null;
+	[SerializeField] private GameObject _animationPbject = null;
+	[SerializeField] private Animator _animation = null;
 	[SerializeField] private AudioSource _audioSource = null;
 	[SerializeField] private SubtitlePlayer _subtitlePlayer = null;
 	private void Start()
@@ -22,22 +23,19 @@ public class NarrationManager : MonoBehaviour
 
 		_subtitlePlayer.Play(narration.Subtitles, narration.SubtitlesSpeed);
 
-		if (narration.AudioClip != null)
-		{
-			_audioSource.clip = narration.AudioClip;
-			_audioSource.Play();
-			StartCoroutine(HideAfterDelay(narration.AudioClip.length));
-		}
+		_audioSource.clip = narration.AudioClip;
+		_audioSource.Play();
+		_animationPbject.SetActive(false);
+		StartCoroutine(HideAfterDelay(narration.AudioClip.length));
 		if (GameManager.Instance.LastMapSelected == _startSceneIndex)
 		{
-			_videoPlayer.clip = GameManager.Instance.NarrationCatalog.StartVideoClip;
-			_videoPlayer.Play();
-			//StartCoroutine(HideAfterDelay(GameManager.Instance.NarrationCatalog.StartVideoClip.length));
+			_animationPbject.SetActive(true);
+			_animation.Play("Start");
 		}
 		else if (GameManager.Instance.LastMapSelected == _endSceneIndex)
 		{
-			_videoPlayer.clip = GameManager.Instance.NarrationCatalog.EndVideoClip;
-			_videoPlayer.Play();
+			_animationPbject.SetActive(true);
+			_animation.Play("End");
 		}
 	}
 

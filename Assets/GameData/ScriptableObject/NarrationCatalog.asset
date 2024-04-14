@@ -22,7 +22,7 @@ MonoBehaviour:
     - 'You see my friend... Every star in the sky reminds me of the moments we shared
       by the water.I love you beyond stars! '
   - AfterIndexes: ffffffff
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 851723c93cf942d47bbc2f0a3943cc02, type: 3}
     SubtitlesSpeed: 14
     Subtitles:
     - In the vast reaches of space, there was an old fisherman who had lost his only

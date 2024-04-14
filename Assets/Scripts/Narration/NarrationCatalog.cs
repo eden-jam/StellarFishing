@@ -15,13 +15,13 @@ public class Narration
 [CreateAssetMenu(fileName = "NarrationCatalog", menuName = "Scriptable Objects/Narration Catalog", order = 1)]
 public class NarrationCatalog : ScriptableObject
 {
-	[SerializeField] private VideoClip _startVideoClip = null;
-	[SerializeField] private VideoClip _endVideoClip = null;
+	[SerializeField] private AnimationClip _startVideoClip = null;
+	[SerializeField] private AnimationClip _endVideoClip = null;
 
 	[SerializeField] private List<Narration> _narration = null;
 
-    public VideoClip StartVideoClip { get => _startVideoClip; }
-    public VideoClip EndVideoClip { get => _endVideoClip; }
+    public AnimationClip StartVideoClip { get => _startVideoClip; }
+    public AnimationClip EndVideoClip { get => _endVideoClip; }
 
     public Narration FindNarration(int lastIndex)
 	{
