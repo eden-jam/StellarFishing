@@ -106,11 +106,13 @@ public class FishingManager : Singleton<FishingManager>
 		{
 			_winPanel.gameObject.SetActive(true);
 			_winPanel.PanelHiddedEvent += HideEnd;
+			PlayerBoatAnimation.Instance.PlayVictory();
 		}
 		else
 		{
 			_loosePanel.gameObject.SetActive(true);
 			_loosePanel.PanelHiddedEvent += HideEnd;
+			PlayerBoatAnimation.Instance.PlayIdle();
 		}
 	}
 

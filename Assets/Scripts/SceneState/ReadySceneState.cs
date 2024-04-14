@@ -12,4 +12,10 @@ public class ReadySceneState : ISceneState
 			SceneStateManager.Instance.RequestNextState();
 		}
 	}
+
+	public override void OnExitState()
+	{
+		base.OnExitState();
+		PlayerBoatAnimation.Instance.PlayLaunch();
+	}
 }

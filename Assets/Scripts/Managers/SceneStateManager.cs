@@ -11,11 +11,11 @@ public class SceneStateManager : Singleton<SceneStateManager>
 		OutroState
 	}
 
+	[SerializeField] private int _fishNeeded = 0;
+
 	private Dictionary<SceneState, ISceneState> _sceneStates = null;
 
 	private SceneState _currentSceneState = SceneState.IntroState;
-
-	[SerializeField] private int _fishNeeded = 0;
 
 	private int _fishCatched = 0;
 
