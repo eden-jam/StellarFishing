@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NarrationCatalog
   m_EditorClassIdentifier: 
   _startVideoClip: {fileID: 32900000, guid: 22cff502dda03f549b48cd236bf347e0, type: 3}
-  _endVideoClip: {fileID: 32900000, guid: 22cff502dda03f549b48cd236bf347e0, type: 3}
+  _endVideoClip: {fileID: 32900000, guid: fcc27ade8131997449b619f83bdfd90c, type: 3}
   _narration:
   - AfterIndexes: 0300000004000000
     AudioClip: {fileID: 8300000, guid: bc4c9f602b7ab4a48865fb5b79fb34ab, type: 3}
@@ -32,9 +32,10 @@ MonoBehaviour:
       him.
     - 'But one day, in his solitude, His life will change. '
   - AfterIndexes: 08000000
-    AudioClip: {fileID: 0}
-    SubtitlesSpeed: 10
+    AudioClip: {fileID: 8300000, guid: 698a7bcf8707e6043b37d2b9e219a47a, type: 3}
+    SubtitlesSpeed: 22
     Subtitles:
+    - ' '
     - Yearning for companionship, the fisherman unknowingly beckoned a powerful god.
       Touched by the fisherman's silent plea, the god granted an extraordinary wish.
       Restoring life to the fisherman's beloved dog.

@@ -12,6 +12,7 @@ public class NarrationManager : MonoBehaviour
 	[SerializeField] private SubtitlePlayer _subtitlePlayer = null;
 	private void Start()
 	{
+		AudioManager.Instance.MuteMusic();
 		Narration narration = GameManager.Instance.NarrationCatalog.FindNarration(GameManager.Instance.LastMapSelected);
 		if (narration == null)
 		{
@@ -20,23 +21,23 @@ public class NarrationManager : MonoBehaviour
 		}
 
 		_subtitlePlayer.Play(narration.Subtitles, narration.SubtitlesSpeed);
+
+		if (narration.AudioClip != null)
+		{
+			_audioSource.clip = narration.AudioClip;
+			_audioSource.Play();
+			StartCoroutine(HideAfterDelay(narration.AudioClip.length));
+		}
 		if (GameManager.Instance.LastMapSelected == _startSceneIndex)
 		{
 			_videoPlayer.clip = GameManager.Instance.NarrationCatalog.StartVideoClip;
 			_videoPlayer.Play();
-			StartCoroutine(HideAfterDelay(GameManager.Instance.NarrationCatalog.StartVideoClip.length));
+			//StartCoroutine(HideAfterDelay(GameManager.Instance.NarrationCatalog.StartVideoClip.length));
 		}
 		else if (GameManager.Instance.LastMapSelected == _endSceneIndex)
 		{
 			_videoPlayer.clip = GameManager.Instance.NarrationCatalog.EndVideoClip;
 			_videoPlayer.Play();
-			StartCoroutine(HideAfterDelay(GameManager.Instance.NarrationCatalog.EndVideoClip.length));
-		}
-		else
-		{
-			_audioSource.clip = narration.AudioClip;
-			_audioSource.Play();
-			StartCoroutine(HideAfterDelay(narration.AudioClip.length));
 		}
 	}
 
@@ -45,6 +46,7 @@ public class NarrationManager : MonoBehaviour
 		yield return new WaitForSeconds((float)delay);
 
 		GameManager.Instance.OnNarrationEnded();
+		AudioManager.Instance.UnmuteMusic();
 	}
 
 }

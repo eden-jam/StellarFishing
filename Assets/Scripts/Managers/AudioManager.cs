@@ -7,6 +7,7 @@ public class AudioManager : Singleton<AudioManager>
 	#region Fields
 	[SerializeField] private PropSoundAudioSource _soundSourcePrefab = null;
 	[SerializeField] private AudioSource _fishingRodSoundSource = null;
+	[SerializeField] private AudioSource _music = null;
 
 	[SerializeField] private AudioClip _transitionClip = null;
 	[SerializeField] private AudioClip _clicClip = null;
@@ -43,6 +44,15 @@ public class AudioManager : Singleton<AudioManager>
 		PlaySound(_clicClip);
 	}
 
+	public void MuteMusic()
+	{
+		_music.volume = 0.0f;
+	}
+
+	public void UnmuteMusic()
+	{
+		_music.volume = 1.0f;
+	}
 	#region Internals
 	private PropSoundAudioSource OnCreate()
 	{

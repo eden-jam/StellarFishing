@@ -148,6 +148,7 @@ MonoBehaviour:
   _soundSourcePrefab: {fileID: 1142437260073633117, guid: d850f924bc862f944b8679ffc6b9fd40,
     type: 3}
   _fishingRodSoundSource: {fileID: 8014393202762464827}
+  _music: {fileID: 8464922803516113994}
   _transitionClip: {fileID: 8300000, guid: ddf107d5df8126d4eb3c5f06b1c8a1ca, type: 3}
   _clicClip: {fileID: 8300000, guid: 68a4bd8225153f94cb4da3987f1c9437, type: 3}
 --- !u!81 &5531623961801858941
