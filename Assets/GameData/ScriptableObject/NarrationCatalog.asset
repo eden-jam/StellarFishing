@@ -32,7 +32,7 @@ MonoBehaviour:
       him.
     - 'But one day, in his solitude, His life will change. '
   - AfterIndexes: 08000000
-    AudioClip: {fileID: 8300000, guid: 698a7bcf8707e6043b37d2b9e219a47a, type: 3}
+    AudioClip: {fileID: 8300000, guid: 6728c17a200195f46891dd2e9b981a9a, type: 3}
     SubtitlesSpeed: 22
     Subtitles:
     - Yearning for companionship, the fisherman unknowingly beckoned a powerful god.
