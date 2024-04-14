@@ -81,6 +81,7 @@ public sealed class RythmFishingPanel : IFishingPanel
 		}
 		else
 		{
+			_rythmCursor.SetState(RythmCursor.State.Failed);
 			AudioManager.Instance.PlaySoundFishingRodSound(_fishingRodBad.GetRandomClip());
 		}
 
