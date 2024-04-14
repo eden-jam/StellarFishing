@@ -215,8 +215,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Succeed
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3679fce37ee1e0942ae438d6044f3554, type: 2}
-  m_sharedMaterial: {fileID: 5787844086568261290, guid: 3679fce37ee1e0942ae438d6044f3554,
+  m_fontAsset: {fileID: 11400000, guid: 90b834d2768b3064d8aef637db0d3183, type: 2}
+  m_sharedMaterial: {fileID: -8119986686275636173, guid: 90b834d2768b3064d8aef637db0d3183,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -443,4 +443,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca06668e9aa2674984554abb51b254e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _image: {fileID: 0}

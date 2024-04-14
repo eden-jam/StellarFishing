@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Playables;
-
 public class ReadySceneState : ISceneState
 {
 	public override void Update()
@@ -13,9 +8,16 @@ public class ReadySceneState : ISceneState
 		}
 	}
 
+	public override void OnEnterState()
+	{
+		base.OnEnterState();
+		FishingManager.Instance.PressToFishPanel.gameObject.SetActive(true);
+	}
+
 	public override void OnExitState()
 	{
 		base.OnExitState();
+		FishingManager.Instance.PressToFishPanel.gameObject.SetActive(false);
 		PlayerBoatAnimation.Instance.PlayLaunch();
 	}
 }

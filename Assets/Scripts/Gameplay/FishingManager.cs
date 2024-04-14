@@ -5,6 +5,7 @@ using UnityEngine;
 public class FishingManager : Singleton<FishingManager>
 {
 	#region Fields
+	[SerializeField] private PressToFishPanel _pressToFishPanel = null;
 	[SerializeField] private PrecisionFishingPanel _precisionFishingPanel = null;
 	[SerializeField] private SmashFishingPanel _smashFishingPanel = null;
 	[SerializeField] private RythmFishingPanel _rythmFishingPanel = null;
@@ -17,6 +18,7 @@ public class FishingManager : Singleton<FishingManager>
 
 	#region Properties
 	public FishDescription CurrentFish { get => _currentFish;}
+	public PressToFishPanel PressToFishPanel { get => _pressToFishPanel; }
 	#endregion Properties
 
 	#region Events

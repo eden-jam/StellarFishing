@@ -15,7 +15,7 @@ public class SceneStateManager : Singleton<SceneStateManager>
 
 	private Dictionary<SceneState, ISceneState> _sceneStates = null;
 
-	private SceneState _currentSceneState = SceneState.IntroState;
+	private SceneState _currentSceneState = SceneState.ReadyState;
 
 	private int _fishCatched = 0;
 
@@ -24,7 +24,6 @@ public class SceneStateManager : Singleton<SceneStateManager>
 		InputManager.Instance.SetCursorState(true);
 		_sceneStates = new Dictionary<SceneState, ISceneState>
 		{
-			{ SceneState.IntroState, new IntroSceneState() },
 			{ SceneState.ReadyState, new ReadySceneState() },
 			{ SceneState.GameState, new GameSceneState() },
 			{ SceneState.OutroState, new OutroSceneState() }
