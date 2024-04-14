@@ -199,17 +199,17 @@ PrefabInstance:
     - target: {fileID: 2936938119495403498, guid: 9ce7be876185dbe4783eabe3415bdbe9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.22242022
+      value: 0.22242023
       objectReference: {fileID: 0}
     - target: {fileID: 2936938119495403498, guid: 9ce7be876185dbe4783eabe3415bdbe9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.05612609
+      value: 0.056126058
       objectReference: {fileID: 0}
     - target: {fileID: 2936938119495403498, guid: 9ce7be876185dbe4783eabe3415bdbe9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.012826699
+      value: -0.012826693
       objectReference: {fileID: 0}
     - target: {fileID: 4655503172300963267, guid: 9ce7be876185dbe4783eabe3415bdbe9,
         type: 3}
@@ -334,6 +334,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 235242275624172442, guid: ef74bc027f91cef42ae0912a0565f73e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599882114340796242, guid: ef74bc027f91cef42ae0912a0565f73e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3066122736187356757, guid: ef74bc027f91cef42ae0912a0565f73e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977787527728446039, guid: ef74bc027f91cef42ae0912a0565f73e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980176540314635805, guid: ef74bc027f91cef42ae0912a0565f73e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7400404603298911540, guid: ef74bc027f91cef42ae0912a0565f73e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -388,6 +413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _currentEnvironmentType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7984119651113165621, guid: ef74bc027f91cef42ae0912a0565f73e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8168242042828340964, guid: ef74bc027f91cef42ae0912a0565f73e,
         type: 3}

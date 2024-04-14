@@ -19,7 +19,9 @@ public class GameManager : Singleton<GameManager>
 
     public int LastMapSelected { get => _lastMapSelected; }
 
-    private void Start()
+	[SerializeField] private int LastMapIndex = 8;
+
+	private void Start()
 	{
 		DontDestroyOnLoad(this);
 	}
@@ -59,13 +61,13 @@ public class GameManager : Singleton<GameManager>
 
 	public void OnSceneEnd()
 	{
-		if (true) // TODO
+		if (_lastMapSelected < LastMapIndex) // TODO
 		{
 			LoadMap();
 		}
 		else
 		{
-			SceneManager.LoadScene(_sceneMap);
+			SceneManager.LoadScene(_sceneEnd);
 		}
 	}
 
