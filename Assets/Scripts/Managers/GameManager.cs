@@ -75,11 +75,11 @@ public class GameManager : Singleton<GameManager>
 
 	public void OnSceneEnd()
 	{
-		//if (_narrationCatalog.FindNarration(LastMapSelected) != null)
-		//{
-		//	LoadNarration();
-		//}
-		//else
+		if (_narrationCatalog.FindNarration(LastMapSelected) != null)
+		{
+			LoadNarration();
+		}
+		else
 		{
 			OnNarrationEnded();
 		}
@@ -100,5 +100,6 @@ public class GameManager : Singleton<GameManager>
 	public void Restart()
 	{
 		SceneManager.LoadScene(_sceneStart);
+		_lastMapSelected = -1;
 	}
 }

@@ -27,16 +27,16 @@ public class NarrationManager : MonoBehaviour
 		_audioSource.Play();
 		_animationPbject.SetActive(false);
 		StartCoroutine(HideAfterDelay(narration.AudioClip.length));
-		//if (GameManager.Instance.LastMapSelected == _startSceneIndex)
-		//{
-		//	_animationPbject.SetActive(true);
-		//	_animation.Play("Start");
-		//}
-		//else if (GameManager.Instance.LastMapSelected == _endSceneIndex)
-		//{
-		//	_animationPbject.SetActive(true);
-		//	_animation.Play("End");
-		//}
+		if (GameManager.Instance.LastMapSelected == _startSceneIndex)
+		{
+			_animationPbject.SetActive(true);
+			_animation.Play("Start");
+		}
+		else if (GameManager.Instance.LastMapSelected == _endSceneIndex)
+		{
+			_animationPbject.SetActive(true);
+			_animation.Play("End");
+		}
 	}
 
 	private IEnumerator HideAfterDelay(double delay)

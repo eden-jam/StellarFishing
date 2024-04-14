@@ -35,7 +35,6 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: 698a7bcf8707e6043b37d2b9e219a47a, type: 3}
     SubtitlesSpeed: 22
     Subtitles:
-    - ' '
     - Yearning for companionship, the fisherman unknowingly beckoned a powerful god.
       Touched by the fisherman's silent plea, the god granted an extraordinary wish.
       Restoring life to the fisherman's beloved dog.
