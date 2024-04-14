@@ -77,7 +77,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59896ec87e08ff46a94e4f41b7c50e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input: {fileID: -3402327480356844279, guid: 88ab67eed2b73c6439d7ae0d999245e7, type: 3}
+  _interactInput: {fileID: -3402327480356844279, guid: 88ab67eed2b73c6439d7ae0d999245e7,
+    type: 3}
+  _menuInput: {fileID: -6024467274428189484, guid: 88ab67eed2b73c6439d7ae0d999245e7,
+    type: 3}
+  _readThisFrame: 0
 --- !u!1 &2427775039407142761
 GameObject:
   m_ObjectHideFlags: 0

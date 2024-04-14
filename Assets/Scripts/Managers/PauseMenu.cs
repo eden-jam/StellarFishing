@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (InputManager.Instance.MenuInput.action.WasPerformedThisFrame())
 		{
 			if (GameIsPaused)
 			{
@@ -25,21 +25,21 @@ public class PauseMenu : MonoBehaviour
 	{
 		PausePanel.SetActive(true);
 		InputManager.Instance.SetCursorState(false);
-		InputManager.Instance.Input.action.Disable();
+		InputManager.Instance.InteractInput.action.Disable();
 		GameIsPaused = true;
 	}
 	public void Resume()
 	{
 		PausePanel.SetActive(false);
 		InputManager.Instance.SetCursorState(true);
-		InputManager.Instance.Input.action.Enable();
+		InputManager.Instance.InteractInput.action.Enable();
 		GameIsPaused = false;
 	}
 
 	public void Restart()
 	{
 		InputManager.Instance.SetCursorState(true);
-		InputManager.Instance.Input.action.Enable();
+		InputManager.Instance.InteractInput.action.Enable();
 		GameIsPaused = false;
 
 		GameManager.Instance.Restart();

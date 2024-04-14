@@ -3,11 +3,13 @@ using UnityEngine.InputSystem;
 
 public class InputManager : Singleton<InputManager>
 {
-	[SerializeField] private InputActionReference _input = null;
+	[SerializeField] private InputActionReference _interactInput = null;
+	[SerializeField] private InputActionReference _menuInput = null;
 
 	public bool _readThisFrame = false;
 
-	public InputActionReference Input { get => _input; }
+	public InputActionReference InteractInput { get => _interactInput; }
+	public InputActionReference MenuInput { get => _menuInput; }
 
 	private void Start()
 	{
@@ -24,7 +26,7 @@ public class InputManager : Singleton<InputManager>
 		if (_readThisFrame == false)
 		{
 			_readThisFrame = true;
-			return _input.action.WasPerformedThisFrame();
+			return _interactInput.action.WasPerformedThisFrame();
 		}
 		return false;
 	}
