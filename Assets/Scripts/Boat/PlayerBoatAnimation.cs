@@ -7,27 +7,21 @@ public class PlayerBoatAnimation : Singleton<PlayerBoatAnimation>
 	[SerializeField] private Animator _playerAnimatior;
 	[SerializeField] private Animator _dogAnimator;
 
-	public void PlayCatch()
-	{
-		_playerAnimatior.Play("Catch");
-		_dogAnimator.Play("Catch");
-	}
-
 	public void PlayLaunch()
 	{
-		_playerAnimatior.Play("Launch");
-		_dogAnimator.Play("Launch");
+		_playerAnimatior.SetTrigger("Launch");
+		_dogAnimator.SetTrigger("Launch");
 	}
 
-	public void PlayIdle()
+	public void PlayLoose()
 	{
-		_playerAnimatior.Play("Idle");
-		_dogAnimator.Play("Idle");
+		_playerAnimatior.SetTrigger("Loose");
+		_dogAnimator.SetTrigger("Loose");
 	}
 
 	public void PlayVictory()
 	{
-		_playerAnimatior.Play("Victory");
-		_dogAnimator.Play("Victory");
+		_playerAnimatior.SetTrigger("Victory");
+		_dogAnimator.SetTrigger("Victory");
 	}
 }
