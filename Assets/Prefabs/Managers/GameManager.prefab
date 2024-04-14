@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fishesCatalog: {fileID: 11400000, guid: e6fd2b06ebf0bf74092112eabbca4b00, type: 2}
+  _narrationCatalog: {fileID: 11400000, guid: 30d4dac8417a3b84794d915fcaec7a42, type: 2}
   _sceneStart: StartScene
   _sceneMap: MapScene
   _sceneNarration: NarrationScene
